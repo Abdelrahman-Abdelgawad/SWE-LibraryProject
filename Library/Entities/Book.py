@@ -1,3 +1,11 @@
+#-------------------------------------------------------------------------------
+#
+# Author: Elsayed Khaled Elsayed El-Refaei
+#
+# Date: 26-05-2021
+#
+#-------------------------------------------------------------------------------
+
 from DataAccess.DBAffiliate import DBAffiliate
 
 class Book(DBAffiliate):

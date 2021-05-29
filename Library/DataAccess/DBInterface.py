@@ -1,3 +1,9 @@
+#--------------------------
+# Author: Sherif Gamal
+#
+# Date:   26-05-2021
+#--------------------------
+
 from DataAccess.DBAffiliate import DBAffiliate
 
 from Entities.Book      import Book
@@ -7,7 +13,7 @@ from Entities.Branch    import Branch
 from Entities.Borrowing import Borrowing
 from Entities.Returning import Returning
 
-# this class is for interfacing with the library database
+# this class provides the means for interfacing with the library database
 class DBInterface(DBAffiliate):
     
     def __init__(self):
@@ -16,9 +22,9 @@ class DBInterface(DBAffiliate):
     #----------------------------------------------------
     
     """
-    * Description: this private method takes the name of a table as a string, and returns an object of the table's class
-    * takes:   string tableName
-    * returns: object tableObj
+    * Description: this private method takes the name of a table as a string, and returns an object of that table's class
+    * takes:       string tableName
+    * returns:     object tableObj
     """
     def __findTableObj(self, tableName):
         
@@ -41,9 +47,9 @@ class DBInterface(DBAffiliate):
     #----------------------------------------------------
     
     """
-    * Description: Findall method that returns all the rows in the provided table
-    * takes:   string tableName
-    * returns: List<Tuple> output or String exception
+    * Description: this method returns all the rows in the provided table
+    * takes:       string tableName
+    * returns:     List<Tuple> output | String exception
     """
     def FindAll(self, tableName):
         try:
@@ -58,9 +64,9 @@ class DBInterface(DBAffiliate):
     #----------------------------------------------------
     
     """
-    * Description: FindByID method that returns the specified row in the provided table
-    * takes:   string tableName, string ID
-    * returns: List<Tuple> output or String exception
+    * Description: this method returns the specified row in the provided table
+    * takes:       string tableName, string ID
+    * returns:     Tuple output | String exception
     """
     def FindByID(self, tableName, ID):
         try:
@@ -75,9 +81,9 @@ class DBInterface(DBAffiliate):
     #----------------------------------------------------
     
     """
-    * Description: Insert method that inserts a row in the provided table
-    * takes:   string tableName, dictionary rowDict
-    * returns: string retStr
+    * Description: this method inserts a row in the provided table
+    * takes:       string tableName, dictionary rowDict
+    * returns:     string retStr
     """
     def Insert(self, tableName, rowDict):
         retStr = ""                                    # return string which will contain the output of the method
@@ -94,8 +100,8 @@ class DBInterface(DBAffiliate):
     
     """
     * Description: Delete method that deletes a specified row in the provided table
-    * takes:   string tableName, string ID
-    * returns: string retStr
+    * takes:       string tableName, string ID
+    * returns:     string retStr
     """
     def Delete(self, tableName, ID):
         retStr = ""                                    # return string which will contain the output of the method
@@ -111,8 +117,8 @@ class DBInterface(DBAffiliate):
     #----------------------------------------------------
     """
     * Description: Update method that updates a specified row in the provided table
-    * takes:   string tableName, dictionary rowDict
-    * returns: string retStr
+    * takes:       string tableName, dictionary rowDict
+    * returns:     string retStr
     """
     def Update(self, tableName, rowDict):
         retStr = ""                                    # return string which will contain the output of the method
@@ -129,8 +135,8 @@ class DBInterface(DBAffiliate):
     
     """
     * Description: Disconnect the connection form the MySQL server
-    * takes: void
-    * returns: void
+    * takes:       void
+    * returns:     void
     """
     def Disconnect(self):
         self._conn.Disconnect() # disconnect the connection form the MySQL server
